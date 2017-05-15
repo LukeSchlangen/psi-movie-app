@@ -9,15 +9,15 @@ app.use(express.static('public'));
 
 app.use(bodyParser.json());
 
-// mongoose.connect('mongodb://localhost:27017/psi-movie-db');
-//
-// mongoose.connection.on('connected', function() {
-//   console.log('We connected to the database! Hooray!');
-// });
-//
-// mongoose.connection.on('error', function() {
-//   console.log('We did not connect to the database');
-// });
+mongoose.connect('mongodb://localhost:27017/psi-movie-db');
+
+mongoose.connection.on('connected', function() {
+  console.log('We connected to the database! Hooray!');
+});
+
+mongoose.connection.on('error', function() {
+  console.log('We did not connect to the database');
+});
 
 app.use('/favorites', favorites);
 

@@ -8,5 +8,6 @@
 
 <!-- Movies repeat below here -->
 <div ng-repeat="movie in vm.searchResult.details">
-  {{movie.Title}} <button type="button" name="button" class="btn btn-primary" ng-click="vm.saveFavorite(movie)">Save Movie as Favorite</button>
+  <hr>
+  {{movie}} <button type="button" name="button" class="btn btn-primary" ng-click="vm.saveFavorite(movie)">Save Movie as Favorite</button>
 </div>
