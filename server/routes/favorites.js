@@ -6,7 +6,14 @@ var Favorite = require('../models/favorites');
 // var router = require('express').Router();
 
 router.get('/', function(req, res) {
-  res.send('You hit the favorites GET!')
+  Favorite.find({}, function(err, favorites) {
+    if(err) {
+      console.log('There was an error with the favorites find', err);
+      res.sendStatus(500);
+    } else {
+      res.send(favorites);
+    }
+  });
 });
 
 router.post('/', function(req, res) {
