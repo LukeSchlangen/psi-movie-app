@@ -30,4 +30,18 @@ app.service('favoritesService', ['$http', function($http){
       self.getFavorites();
     });
   };
+
+
+  self.removeFavorite = function(movieId) {
+    console.log('Hit the remove favorite function in the service!');
+    console.log('Movie id to remove is:', movieId);
+    $http({
+      method: 'DELETE',
+      url: '/favorites',
+      params: { id: movieId }
+    }).then(function(response) {
+      console.log(response);
+      self.getFavorites();
+    });
+  };
 }]);

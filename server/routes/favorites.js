@@ -30,4 +30,16 @@ router.post('/', function(req, res) {
   });
 });
 
+router.delete('/', function(req, res) {
+  var movieIdToDelete = req.query.id;
+  Favorite.remove({ _id: movieIdToDelete }, function(err) {
+    if (err) {
+      console.log('Error removing movie from database', err);
+      res.sendStatus(500);
+    } else {
+      res.sendStatus(200);
+    }
+  });
+});
+
 module.exports = router;
