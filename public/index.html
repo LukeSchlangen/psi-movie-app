@@ -3,9 +3,14 @@
   <head>
     <meta charset="utf-8">
     <title>Movie App!</title>
+    <script src="vendors/angular.js" charset="utf-8"></script>
+    <script src="vendors/angular-route.js" charset="utf-8"></script>
+    <script src="scripts/client.js" charset="utf-8"></script>
   </head>
-  <body>
+  <body ng-app="movieApp">
     <h1>My Movie Application for Awesome Movies</h1>
+    <a ng-href="#!search">Search</a>
+    <a ng-href="#!favorites">Favorites</a>
     <div ng-view></div>
   </body>
 </html>
