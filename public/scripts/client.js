@@ -1,6 +1,10 @@
+// Creating the angular module that will act as our entire application
 var app = angular.module('movieApp', ['ngRoute']);
 
+// Angular configuration
 app.config(['$routeProvider', function($routeProvider) {
+  // we're bring in $routeProvider, which is a small part of ngRoute,
+  // this allows us to do client-side navigation
   $routeProvider
     .when('/search', {
       templateUrl: 'views/search.html',
